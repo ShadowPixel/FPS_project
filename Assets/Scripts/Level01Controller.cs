@@ -9,8 +9,15 @@ using UnityEngine.UI;
 public class Level01Controller : MonoBehaviour
 {
     [SerializeField] Text _currentScoreTextView;
+    [SerializeField] GameObject pauseMenu;
 
     int _currentScore;
+    bool paused = false;
+
+    private void Awake()
+    {
+        pauseMenu.SetActive(false);
+    }
 
     private void Update()
     {
@@ -23,7 +30,19 @@ public class Level01Controller : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            ExitLevel();
+            if(paused == true)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                paused = false;
+                Resume();
+            }
+            else
+            {
+                paused = true;
+                Pause();
+                PauseTime();
+            }
         }
     }
 
@@ -36,8 +55,37 @@ public class Level01Controller : MonoBehaviour
             "Current score: " + _currentScore.ToString();
     }
 
-    public void ExitLevel()
+    public void Pause()
     {
+        pauseMenu.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public bool PauseTime()
+    {
+        if(Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+            return (false);
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            return (true);
+        }
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        paused = false;
+    }
+
+    public void Exit()
+    { 
         //compare current score to highscore
         int highScore = PlayerPrefs.GetInt("HighScore");
         if(_currentScore > highScore)

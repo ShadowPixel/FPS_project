@@ -6,6 +6,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance = null;
+    int playcount;
 
     AudioSource _audioSource;
 
@@ -29,7 +30,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySong(AudioClip clip)
     {
-        _audioSource.clip = clip;
-        _audioSource.Play();
+        if (playcount == 0)
+        {
+            _audioSource.clip = clip;
+            _audioSource.Play();
+            playcount = 1;
+        }
     }
 }
