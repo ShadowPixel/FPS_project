@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\DamageVolume.cs" />
      <Compile Include="Assets\Scripts\FPSInput.cs" />
      <Compile Include="Assets\Scripts\FPSMotor.cs" />
      <Compile Include="Assets\Scripts\GroundDetector.cs" />

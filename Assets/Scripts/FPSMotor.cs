@@ -11,11 +11,14 @@ public class FPSMotor : MonoBehaviour
     [SerializeField] Camera _camera = null;
     [SerializeField] float _camerAngleLimit = 70f;
     [SerializeField] GroundDetector _groundDetector = null;
+    [SerializeField] GameObject muzzleFlash = null;
+    [SerializeField] GameObject gunshotSound = null;
 
     private float _currentCameraRotationX = 0;
     bool _isGrounded = false;
 
     Vector3 _movementThisFrame = Vector3.zero;
+    Vector3 _sprintThisFrame = Vector3.zero;
     float _turnAmountThisFrame = 0;
     float _lookAmountThisFrame = 0;
 
@@ -24,6 +27,8 @@ public class FPSMotor : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        muzzleFlash.SetActive(false);
+        gunshotSound.SetActive(false);
     }
 
     private void OnEnable()
@@ -43,12 +48,19 @@ public class FPSMotor : MonoBehaviour
         ApplyMovement(_movementThisFrame);
         ApplyTurn(_turnAmountThisFrame);
         ApplyLook(_lookAmountThisFrame);
+        ApplySprint(_sprintThisFrame);
     }
 
     public void Move(Vector3 requestedMovement)
     {
         //store movement till next tick
         _movementThisFrame = requestedMovement;
+    }
+
+    public void Sprint(Vector3 requestedSprint)
+    {
+        //store sprint till next tick
+        _sprintThisFrame = requestedSprint;
     }
 
     public void Turn(float turnAmount)
@@ -72,6 +84,12 @@ public class FPSMotor : MonoBehaviour
         }
         _rigidbody.AddForce(Vector3.up * jumpForce);
     }
+    public void Shoot(bool shootState)
+    {
+        //store player has shot till next tick
+        muzzleFlash.SetActive(shootState);
+        gunshotSound.SetActive(shootState);
+    }
 
     void ApplyMovement(Vector3 moveVector)
     {
@@ -84,6 +102,19 @@ public class FPSMotor : MonoBehaviour
         _rigidbody.MovePosition(_rigidbody.position + moveVector);
         //clear movement request
         _movementThisFrame = Vector3.zero;
+    }
+
+    void ApplySprint(Vector3 sprintVector)
+    {
+        //confirm we have srint input, exit otherwise
+        if (sprintVector == Vector3.zero)
+        {
+            return;
+        }
+        //move the rigidbody
+        _rigidbody.MovePosition(_rigidbody.position + sprintVector);
+        //clear movement request
+        _sprintThisFrame = Vector3.zero;
     }
 
     void ApplyTurn(float rotateAmount)
@@ -99,6 +130,7 @@ public class FPSMotor : MonoBehaviour
         //clear rotaion request
         _turnAmountThisFrame = 0;
     }
+
     void ApplyLook(float lookAmount)
     {
         //confirm we have rotation, exit otherwise
