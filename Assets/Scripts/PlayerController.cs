@@ -58,17 +58,17 @@ public class PlayerController : MonoBehaviour
         _input.ShootInput -= OnShoot;
     }
 
-    void UpdateGUI()
-    {
-        currentHealthLabel.text = currentHealth.ToString();
-    }
-
     public void AlterHealth(int amount)
     {
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         CheckDead();
         UpdateGUI();
+    }
+
+    void UpdateGUI()
+    {
+        currentHealthLabel.text = currentHealth.ToString();
     }
 
     private void CheckDead()

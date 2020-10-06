@@ -10,6 +10,7 @@ public class Level01Controller : MonoBehaviour
 {
     [SerializeField] Text _currentScoreTextView;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject deadMenu;
 
     int _currentScore;
     bool paused = false;
@@ -17,6 +18,7 @@ public class Level01Controller : MonoBehaviour
     private void Awake()
     {
         pauseMenu.SetActive(false);
+        deadMenu.SetActive(false);
     }
 
     private void Update()
