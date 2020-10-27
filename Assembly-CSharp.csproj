@@ -57,9 +57,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\DamageVolume.cs" />
+     <Compile Include="Assets\Scripts\EnemyShooter.cs" />
      <Compile Include="Assets\Scripts\FPSInput.cs" />
      <Compile Include="Assets\Scripts\FPSMotor.cs" />
+     <Compile Include="Assets\Scripts\FireWeapon.cs" />
      <Compile Include="Assets\Scripts\GroundDetector.cs" />
+     <Compile Include="Assets\Scripts\KnockbackHit.cs" />
      <Compile Include="Assets\Scripts\Level01Controller.cs" />
      <Compile Include="Assets\Scripts\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

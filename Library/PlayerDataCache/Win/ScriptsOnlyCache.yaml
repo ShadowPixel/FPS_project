@@ -3,8 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioManager
     - DamageVolume
+    - EnemyShooter
     - FPSInput
     - FPSMotor
+    - FireWeapon
     - GroundDetector
     - Level01Controller
     - MainMenuController
@@ -62,33 +64,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 11312}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11354}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11400}
     - Class: 114
-      Script: {instanceID: 11736}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 11748}
+      Script: {instanceID: 11752}
     - Class: 114
-      Script: {instanceID: 11940}
+      Script: {instanceID: 11802}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 12124}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12600}
+      Script: {instanceID: 12130}
     - Class: 114
-      Script: {instanceID: 12844}
+      Script: {instanceID: 12606}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 12994}
+      Script: {instanceID: 12872}
+    - Class: 114
+      Script: {instanceID: 12960}
+    - Class: 114
+      Script: {instanceID: 13002}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -137,27 +143,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 11220}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11312}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11354}
     - Class: 114
-      Script: {instanceID: 11670}
+      Script: {instanceID: 11674}
     - Class: 114
-      Script: {instanceID: 11736}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 11748}
+      Script: {instanceID: 11752}
     - Class: 114
-      Script: {instanceID: 12048}
+      Script: {instanceID: 12054}
     - Class: 114
-      Script: {instanceID: 12124}
+      Script: {instanceID: 12130}
     - Class: 114
-      Script: {instanceID: 12600}
+      Script: {instanceID: 12606}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12960}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -279,6 +285,12 @@ ScriptsOnlyBuild:
     className: GroundDetector
   - hash:
       serializedVersion: 2
+      Hash: f6b2c9b6e6a655be6aed6806e101dd98
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KnockbackHit
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -385,6 +397,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 82a1dab66db4ba2bdf5d81154fbe4283
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FireWeapon
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -537,6 +555,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: ded28d88d9a04bc2f17431c6a3a25c46
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyShooter
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -659,4 +683,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level01.unity
-  playerPath: F:/Scripting for Games/fps test/FPS_project.exe
+  playerPath: F:/Scripting for Games/fafawfaf/FPS_project.exe
